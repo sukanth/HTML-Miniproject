@@ -1,0 +1,84 @@
+Categories:
+   slideShow
+   bestSellers
+   recentReleases
+   fiction
+   romance
+   thriller
+   social
+   law
+   medicine
+   engineering
+   commerce
+   computer
+   electrical
+   electronics
+   mechanical
+   ageLt3
+   ageBtw48
+   ageBtw912
+   india
+   abroad
+   traditional
+   italian
+   chinese
+   
+
+{'id':, 'name':'', 'category':'', 'author':'', 'description':'',  'oldPrice':, 'newPrice':, 'finalPrice':, 'slideshow':, 'priority': }
+
+books={
+   'Categories': {
+      'Novels': {
+         'Fiction': [
+            {'id':'book_id1', 'name':'book1', 'author':'author1', 'description':'description1', 'oldPrice':0, 'newPrice':1, 'finalPrice':2},
+            {'id':'book_id2', 'name':'book2', 'author':'author2', 'description':'description2', 'oldPrice':3, 'newPrice':4, 'finalPrice':5}
+         ],
+         'Romance': [
+            {'id':'book_id3', 'name':'book3', 'author':'author3', 'description':'description3', 'oldPrice':6, 'newPrice':7, 'finalPrice':2},
+            {'id':'book_id4', 'name':'book4', 'author':'author4', 'description':'description4', 'oldPrice':9, 'newPrice':10, 'finalPrice':11}
+         ]
+      },
+      'Travel': {
+         'India': [
+            {'id':'book_id5', 'name':'book5', 'author':'author5', 'description':'description5', 'oldPrice':12, 'newPrice':13, 'finalPrice':14},
+            {'id':'book_id6', 'name':'book6', 'author':'author6', 'description':'description6', 'oldPrice':15, 'newPrice':16, 'finalPrice':17}
+         ],
+         'abroad': [
+            {'id':'book_id7', 'name':'book7', 'author':'author7', 'description':'description7', 'oldPrice':18, 'newPrice':19, 'finalPrice':20},
+            {'id':'book_id8', 'name':'book8', 'author':'author8', 'description':'description8', 'oldPrice':21, 'newPrice':21, 'finalPrice':22}
+         ]
+      }
+   }
+};
+
+
+category.Categories.Novels.Fiction[].id
+
+Getting categories:
+   $.each(books.Categories, function(key, val){ console.log(key)} );
+
+Getting Sub-Categories in a category:
+   $.each(books.Categories.Novels, function(key, val){ console.log(key)} );
+
+Getting books in a Sub-Category
+   $.each(books.Categories.Novels.Fiction, function (key, val){ console.log(val.id) } );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <title>Welcome, Old Oak's Bookstore</title>
+      <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+      <script type="text/javascript" src="js/easypaginate.js"></script>
+      <script type="text/javascript" src="js/storageAdapter.js"></script>
+      <script type="text/javascript" src="js/popUpBox.js"></script>
+      <script type="text/javascript" src="js/myScript.js"></script>
+      <script type="text/javascript" src="js/generator.js"></script>
+      <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+      
+      <link rel="stylesheet" type="text/css" href="css/autocomplete.css" />
+      <link rel="stylesheet" type="text/css" href="css/style.css" />
+      <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Average' rel='stylesheet' type='text/css'>
+      
+      <script type="text/javascript">
+         $(document).ready(function(){
+            generateSlideshowBoxes($('#slider'), 'SlideShow');
+            generateProductThumbBoxes($('.bodyBox')[1], 'BestSelling');
+            generateProductThumbBoxes($('.bodyBox')[2], 'RecentRelease');    
+            generateCartTable();
+            
+
+            $('ul#slider').easyPaginate({
+               step: 4,
+               auto: true,
+               clickstop: false,
+               numeric: true,
+               nextprev: false,
+               pause: 10000,
+               current: 'paginationHover'
+            });
+         });
+      </script>
+      
+      
+   </head>
+   
+   <body>
+      <header id="headerWrapper">
+         <section id="headerContentWrapper">
+            <section id="logoWrapper">
+               <h1 class="headerLogo">Old Oak's</h1>
+               <h2 class="headerLogoText">Bookstore</h2>
+            </section>
+            <section id="loginWrapper">
+               <section id="loginContentWrapper" >
+                  <section id="loginContent">
+                     <a href="#" id="cartButton" class="buyButton grayButton roundedBorder5" ondragover="dragOver(event)" ondrop="dragDrop(event)">Drop Items Here <br/> Cart: 0</a>
+                     <p id="userDetails">                        
+                     </p>
+					 <nav>
+						<ul>
+							<li><a href="#" id="registerButton">Register</a></li>
+							<li><span>|</span></li>
+							<li><a href="#" class="loginButton">Login</a></li>
+						</ul>                     
+					</nav>
+                  </section>
+                  <div class="clearBoth"></div>
+               </section>
+            </section>
+            <section id="topSearchWrapper" class="roundedBorder5">
+               <form method="GET" action="search.html">
+                  <label for="txtSearchField">Search</label>               
+                  <input type="text" name="query" id="txtSearchField" class="searchField"/>
+                   <input type="submit" value="Submit" id="btnSubmit" class="submitButton roundedBorder5"/>
+               </form>
+            </section>
+            <section id="topNavWrapper">
+				<nav>
+					<ul class="roundedBorder5">
+						<li class="firstLink"><a href="index.html">Home</a></li>
+						<li><a href="stores.html">Out Stores</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li class="lastLink"><a href="about.html">About Us</a></li>                  
+					</ul>
+				</nav>
+            </section>            
+            <div class="clearBoth"></div>
+         </section>
+      </header>
+      
+      <section id="siteWrapper">     
+         <section id="contentWrapper">
+            <section id="leftColumnWrapper">
+               <nav id="leftNavWrapper">
+                  <ul>
+                     <li>
+                        <span class="navHeader">Novels</span>
+                        <ul>
+                           <li class="firstNavLink"><a href="products.html?cat=Fiction">Fiction</a></li>
+                           <li><a href="products.html?cat=Romance">Romance</a></li>
+                           <li><a href="products.html?cat=Thriller">Thriller</a></li>
+                           <li class="lastNavLink"><a href="products.html?cat=Social">Social</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <span class="navHeader">Academic</span>
+                        <ul>
+                           <li class="firstNavLink"><a href="products.html?cat=Law">Law</a></li>
+                           <li><a href="products.html?cat=Medicine">Medicine</a></li>
+                           <li><a href="products.html?cat=Engineering">Engineering</a></li>
+                           <li class="lastNavLink"><a href="products.html?cat=Commerce">Commerce</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <span class="navHeader">Technical</span>
+                        <ul>
+                           <li class="firstNavLink"><a href="products.html?cat=Computer">Computer</a></li>
+                           <li> <a href="products.html?cat=Electrical">Electrical</a></li>
+                           <li><a href="products.html?cat=Electronics">Electronics</a></li>
+                           <li class="lastNavLink"><a href="products.html?cat=Mechanical">Mechanical</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <span class="navHeader">Children Books</span>
+                        <ul>
+                           <li class="firstNavLink"><a href="products.html?cat=Age3">Age &lt; 3</a></li>
+                           <li><a href="products.html?cat=Age48">Age 4 - 8</a></li>
+                           <li><a href="products.html?cat=Age912">Age 9 - 12</a></li>
+                           <li class="lastNavLink"><a href="products.html?cat=Comics">Comics</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <span class="navHeader">Travel</span>
+                        <ul>
+                           <li class="firstNavLink"><a href="products.html?cat=India">India</a></li>
+                           <li class="lastNavLink"><a href="products.html?cat=Abroad">Abroad</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <span class="navHeader">Cooking</span>
+                        <ul>
+                           <li class="firstNavLink"><a href="products.html?cat=Traditional">Traditional Recipies</a></li>
+                           <li><a href="products.html?cat=Italian">Italian</a></li>
+                           <li class="lastNavLink"><a href="products.html?cat=Chinese">Chinese</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </nav>
+            </section>
+            
+            <section id="middleColumnWrapper">
+               <article class="bodyBox">
+                  <div class="roundedBorder5">
+                     <ul id="slider">
+                     </ul>
+                     <div class="clearBoth"></div>
+                  </div>
+               </article>           
+               
+               <article class="bodyBox">
+                  <div class="boxContent">
+                  </div>
+                  <div class="clearBoth"></div>
+               </article>
+               
+               <article class="bodyBox">                  
+                  <div class="boxContent">
+                  </div>
+                  <div class="clearBoth"></div>
+               </article>
+            </section>    
+			
+            <div class="clearBoth"></div>
+         </section>        
+      </section>
+      
+      <footer id="footerWrapper">
+        <section id="footerContentWrapper">
+			<section id="validatorInfo">
+				<img src="images/html5.png" alt="HTML5 Icon"/>
+				<img id="validatedIcon" src="images/html5-validator-icon.png" alt="HTML5 Validated" />
+			</section>
+            <div class="copyright">
+                &copy; 2012 - iGate Computer Systems
+            </div>			
+        </section>		
+      </footer>
+      
+      
+      <section id="dialogBoxes">
+         <article id="shoppingCart">
+            <a href="#" class="dialogCloseButton">&#215;</a>
+            <h2>Cart Details</h2>
+            <div id="shoppedProducts">
+               <table >
+                  <tr>
+                     <th>S.No</th>
+                     <th colspan="2"> Product </th>
+                     <th colspan="3"> Quantity </th>
+                     <th>Cost</th>
+                  </tr>
+				  
+				<tr style="display:none;">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+                  
+               </table>
+            </div>
+            <p>
+               <a href="#" class="checkOutButton greenButton roundedBorder5">Checkout</a>
+            </p>
+            <div class="clearBoth"></div>
+         </article>
+         <section id="loginBox" class="shadow">
+            <a href="#" class="dialogCloseButton">&#215;</a>
+            <form>
+               <table>
+                  <tr>
+                     <td>
+                        <label for="txtUserName">UserName</label>
+                     </td>
+                     <td>
+                        <input type="text" id="txtUserName" class="inputField" />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <label for="txtPassword">Password</label>
+                     </td>
+                     <td>
+                        <input type="password" id="txtPassword" class="inputField" />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        &nbsp;
+                     </td>
+                     <td>
+                        <span class="loginError error"></span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <input type="submit" value="submit" class="loginButton" />
+                     </td>
+                  </tr>
+               </table>
+            </form>
+         </section>
+		 <section id="registerBox" class="shadow">
+            <a href="#" class="dialogCloseButton">&#215;</a>
+            <form>
+               <table>
+                  <tr>
+                     <td>
+                        <label for="txtNewUserName">UserName</label>
+                     </td>
+                     <td>
+                        <input type="text" id="txtNewUserName" class="inputField" />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <label for="txtNewPassword">Password</label>
+                     </td>
+                     <td>
+                        <input type="password" id="txtNewPassword" class="inputField" />
+                     </td>
+                  </tr>
+				  <tr>
+                     <td>
+                        <label for="txtNewRePassword">Retype Password</label>
+                     </td>
+                     <td>
+                        <input type="password" id="txtNewRePassword" class="inputField" />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        &nbsp;
+                     </td>
+                     <td>
+                        <span class="registerError error"></span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <input type="submit" value="submit" class="registerButton" />
+                     </td>
+                  </tr>
+               </table>
+            </form>
+         </section>
+      </section>
+	  
+      <div id="mask">
+      </div>
+   </body>   
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <title>Old Oad Bookstore - Our Stores</title>
+      <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+      <script type="text/javascript" src="js/easypaginate.js"></script>
+      <script type="text/javascript" src="js/storageAdapter.js"></script>
+      <script type="text/javascript" src="js/popUpBox.js"></script>
+      <script type="text/javascript" src="js/myScript.js"></script>
+      <script type="text/javascript" src="js/generator.js"></script>
+      
+      <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+      
+      <link rel="stylesheet" type="text/css" href="css/autocomplete.css" />
+      
+      <link rel="stylesheet" type="text/css" href="css/style.css" />
+      <link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Average' rel='stylesheet' type='text/css'>
+      
+      <script type="text/javascript">
+         $(document).ready(function(){
+         
+            generateCartTable();            
+           
+         });
+      </script>
+      
+      
+   </head>
+   
+   <body>
+      <header id="headerWrapper">
+         <section id="headerContentWrapper">
+            <section id="logoWrapper">
+               <h1 class="headerLogo">Old Oak's</h1>
+               <h2 class="headerLogoText">Bookstore</h2>
+            </section>
+            <section id="loginWrapper">
+               <section id="loginContentWrapper" >
+                  <section id="loginContent">
+                     <a href="#" id="cartButton" class="buyButton grayButton roundedBorder5" ondragover="dragOver(event)" ondrop="dragDrop(event)">Drop Items Here <br/> Cart: 0</a>
+                     <p id="userDetails">                        
+                     </p>
+					 <nav>
+						<ul>
+							<li><a href="#" id="registerButton">Register</a></li>
+							<li><span>|</span></li>
+							<li><a href="#" class="loginButton">Login</a></li>
+						</ul>                     
+					</nav>
+                  </section>
+                  <div class="clearBoth"></div>
+               </section>
+            </section>
+            <section id="topSearchWrapper" class="roundedBorder5">
+               <form method="GET" action="search.html">
+                  <label for="txtSearchField">Search</label>               
+                  <input type="text" name="query" id="txtSearchField" class="searchField"/>
+                   <input type="submit" value="Submit" id="btnSubmit" class="submitButton roundedBorder5"/>
+               </form>
+            </section>
+            <section id="topNavWrapper">
+				<nav>
+					<ul class="roundedBorder5">
+						<li class="firstLink"><a href="index.html">Home</a></li>
+						<li><a href="stores.html">Out Stores</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li class="lastLink"><a href="about.html">About Us</a></li>                  
+					</ul>
+				</nav>
+            </section>            
+            <div class="clearBoth"></div>
+         </section>
+      </header>
+      
+      <section id="siteWrapper">     
+         <section id="contentWrapper">
+            <section id="leftColumnWrapper">
+               <nav id="leftNavWrapper">
+                  <ul>
+                     <li>
+                        <span class="navHeader">Novels</span>
+                        <ul>
+                           <li class="firstNavLink"><a href="products.html?cat=Fiction">Fiction</a></li>
+                           <li><a href="products.html?cat=Romance">Romance</a></li>
+                           <li><a href="products.html?cat=Thriller">Thriller</a></li>
+                           <li class="lastNavLink"><a href="products.html?cat=Social">Social</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <span class="navHeader">Academic</span>
+                        <ul>
+                           <li class="firstNavLink"><a href="products.html?cat=Law">Law</a></li>
+                           <li><a href="products.html?cat=Medicine">Medicine</a></li>
+                           <li><a href="products.html?cat=Engineering">Engineering</a></li>
+                           <li class="lastNavLink"><a href="products.html?cat=Commerce">Commerce</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <span class="navHeader">Technical</span>
+                        <ul>
+                           <li class="firstNavLink"><a href="products.html?cat=Computer">Computer</a></li>
+                           <li> <a href="products.html?cat=Electrical">Electrical</a></li>
+                           <li><a href="products.html?cat=Electronics">Electronics</a></li>
+                           <li class="lastNavLink"><a href="products.html?cat=Mechanical">Mechanical</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <span class="navHeader">Children Books</span>
+                        <ul>
+                           <li class="firstNavLink"><a href="products.html?cat=Age3">Age &lt; 3</a></li>
+                           <li><a href="products.html?cat=Age48">Age 4 - 8</a></li>
+                           <li><a href="products.html?cat=Age912">Age 9 - 12</a></li>
+                           <li class="lastNavLink"><a href="products.html?cat=Comics">Comics</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <span class="navHeader">Travel</span>
+                        <ul>
+                           <li class="firstNavLink"><a href="products.html?cat=India">India</a></li>
+                           <li class="lastNavLink"><a href="products.html?cat=Abroad">Abroad</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <span class="navHeader">Cooking</span>
+                        <ul>
+                           <li class="firstNavLink"><a href="products.html?cat=Traditional">Traditional Recipies</a></li>
+                           <li><a href="products.html?cat=Italian">Italian</a></li>
+                           <li class="lastNavLink"><a href="products.html?cat=Chinese">Chinese</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </nav>
+            </section>
+            
+            <section id="middleColumnWrapper">
+               <h2 class="boxHeader">Our Stores</h2>
+               
+               <div class="office">
+                  <h2 class="officeHeader">Main Office</h2>
+                  <p class="officeAddress">
+                     Plot No: 155-156 (P), 158-162(P) & 165(P)-170(P),
+                     EPIP Phase II, Whitefield,
+                     Bengaluru, 560066
+                     <br/>
+                     <br/>
+                     <strong>Tel:</strong> <span>+91 80 4104 0000</span>
+                     <br/>
+                     <strong>Fax:</strong> <span>+91 80 4125 9090</span>
+                  </p>
+               </div>
+               
+               <div class="office">
+                  <h2 class="officeHeader">Hyderabad</h2>
+                  <p class="officeAddress">
+                     5Q4-A1 & A2, Cyber Towers 
+                     Hitec City, Madhapur 
+                     Hyderabad 500 081
+                     India.
+                     <br/>
+                     <br/>
+                     <strong>Tel:</strong> <span>+91 40  4488 6000</span>
+                     <br/>
+                     <strong>Fax:</strong> <span>+91 40  4488 6002</span>
+                  </p>
+               </div>
+               
+               <div class="office">
+                  <h2 class="officeHeader">Australia</h2>
+                  <p class="officeAddress">
+                     Suite 202, 54 Miller Street 
+                     North Sydney, NSW 2060
+                     Australia.
+                     <br/>
+                     <br/>
+                     <strong>Tel:</strong> <span>+61 2 8920 1122 </span>
+                     <br/>
+                     <strong>Fax:</strong> <span>+61 2 8920 1622</span>
+                  </p>
+               </div>
+               
+               <div class="clearBoth"></div>
+               
+               <iframe width="300" height="300" style="margin:30px  0  0 20px; width:300px;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;t=h&amp;ll=12.979551,77.724506&amp;spn=0.001568,0.001609&amp;z=18&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/?ie=UTF8&amp;t=h&amp;ll=12.979551,77.724506&amp;spn=0.001568,0.001609&amp;z=18&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+               
+            </section>    
+            <div class="clearBoth"></div>
+         </section>        
+      </section>
+      
+      <footer id="footerWrapper">
+        <section id="footerContentWrapper">
+			<section id="validatorInfo">
+				<img src="images/html5.png" />
+				<img id="validatedIcon" src="images/html5-validator-icon.png" />
+			</section>
+            <div class="copyright">
+                &copy; 2011 - iGate Computer Systems
+            </div>			
+        </section>		
+      </footer>
+      
+      
+      <section id="dialogBoxes">
+         <article id="shoppingCart">
+            <a href="#" class="dialogCloseButton">&#215;</a>
+            <h2>Cart Details</h2>
+            <div id="shoppedProducts">
+               <table >
+                  <tr>
+                     <th>S.No</th>
+                     <th colspan="2"> Product </th>
+                     <th colspan="3"> Quantity </th>
+                     <th>Cost</th>
+                  </tr>
+				  
+				<tr style="display:none;">
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+                  
+               </table>
+            </div>
+            <p>
+               <a href="#" class="checkOutButton greenButton roundedBorder5">Checkout</a>
+            </p>
+            <div class="clearBoth"></div>
+         </article>
+         <section id="loginBox" class="shadow">
+            <a href="#" class="dialogCloseButton">&#215;</a>
+            <form>
+               <table>
+                  <tr>
+                     <td>
+                        <label for="txtUserName">UserName</label>
+                     </td>
+                     <td>
+                        <input type="text" id="txtUserName" class="inputField" />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <label for="txtPassword">Password</label>
+                     </td>
+                     <td>
+                        <input type="password" id="txtPassword" class="inputField" />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        &nbsp;
+                     </td>
+                     <td>
+                        <span class="loginError error"></span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <input type="submit" value="submit" class="loginButton" />
+                     </td>
+                  </tr>
+               </table>
+            </form>
+         </section>
+		 <section id="registerBox" class="shadow">
+            <a href="#" class="dialogCloseButton">&#215;</a>
+            <form>
+               <table>
+                  <tr>
+                     <td>
+                        <label for="txtNewUserName">UserName</label>
+                     </td>
+                     <td>
+                        <input type="text" id="txtNewUserName" class="inputField" />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <label for="txtNewPassword">Password</label>
+                     </td>
+                     <td>
+                        <input type="password" id="txtNewPassword" class="inputField" />
+                     </td>
+                  </tr>
+				  <tr>
+                     <td>
+                        <label for="txtNewRePassword">Retype Password</label>
+                     </td>
+                     <td>
+                        <input type="password" id="txtNewRePassword" class="inputField" />
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        &nbsp;
+                     </td>
+                     <td>
+                        <span class="registerError error"></span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>&nbsp;</td>
+                     <td>
+                        <input type="submit" value="submit" class="registerButton" />
+                     </td>
+                  </tr>
+               </table>
+            </form>
+         </section>
+      </section>
+	  
+      <div id="mask">
+      </div>
+   </body>   
+</html>
